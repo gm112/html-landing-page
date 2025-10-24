@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: html-landing
+spec:
+  selector:
+    app: html-landing
+  ports:
+    - port: 80
+      targetPort: 80
