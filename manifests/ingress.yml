@@ -3,18 +3,24 @@ kind: Ingress
 metadata:
   name: html-landing
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    external-dns.alpha.kubernetes.io/hostname: placeholder.bluedreamers.com
+    cert-manager.io/cluster-issuer: letsencrypt-linode
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - placeholder.bluedreamers.com
+      secretName: html-landing-tls
   rules:
-  - http:
-#  - host: landing.bluedreamers.com
-#    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: html-landing
-            port:
-              number: 80
+    - host: placeholder.bluedreamers.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: html-landing-service
+                port:
+                  number: 80
