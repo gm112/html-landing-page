@@ -7,7 +7,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http: #host: landing.argocd.bluedreamers.com
+  - host: landing.argocd.bluedreamers.com
+    http:
       paths:
       - path: /
         pathType: Prefix
