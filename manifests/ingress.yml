@@ -7,8 +7,9 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: landing.bluedreamers.com
-    http:
+  - http:
+#  - host: landing.bluedreamers.com
+#    http:
       paths:
       - path: /
         pathType: Prefix
