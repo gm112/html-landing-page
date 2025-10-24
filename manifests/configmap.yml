@@ -6,7 +6,7 @@ data:
   index.html: |
     <html>
       <body style="font-family: sans-serif; text-align: center;">
-        <h1>🚀 Hello from Argo CD ApplicationSet!</h1>
-        <p>This page was deployed automatically via ApplicationSet.</p>
+        <h1>Pizza Time!</h1>
+        <p>who dat? idk</p>
       </body>
     </html>
