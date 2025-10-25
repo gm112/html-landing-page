@@ -1,0 +1,6 @@
+vars:
+  - name: ENV
+    fieldref:
+      fieldPath: metadata.annotations.env
+resources:
+  - configmap.yaml
