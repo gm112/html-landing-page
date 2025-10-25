@@ -2,5 +2,4 @@ resources:
   - configmap.yml
   - deployment.yml
   - ingress.yml
-  - namespace.yml
   - service.yml
