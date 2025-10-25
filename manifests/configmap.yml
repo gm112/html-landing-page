@@ -7,6 +7,6 @@ data:
     <html>
       <body style="font-family: sans-serif; text-align: center;">
         <h1>Pizza Time!</h1>
-        <p>who dat? idk</p>
+        <p>who dat? idk {{env}}</p>
       </body>
     </html>
