@@ -4,8 +4,3 @@ resources:
   - ingress.yml
   - namespace.yml
   - service.yml
-
-spec:
-  postBuild:
-    substitute:
-      env: '{{env}}'
