@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - configmap.yml
 
+commonAnnotations:
+  ENV: ''
+
 replacements:
   - source:
       kind: ConfigMap
@@ -14,3 +17,4 @@ replacements:
           name: html-content
         fieldPaths:
           - data.index.html
+
