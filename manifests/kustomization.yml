@@ -1,11 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-vars:
-  - name: ENV
-    fieldref:
-      fieldPath: metadata.annotations.env
 resources:
   - deployment.yml
   - service.yml
   - configmap.yml
   - ingress.yml
+
+replacements:
+  - source:
+      kind: ConfigMap
+      name: html-content
+      fieldPath: metadata.annotations.env
+    targets:
+      - select:
+          kind: ConfigMap
+          name: html-content
+        fieldPaths:
+          - data.index.html
